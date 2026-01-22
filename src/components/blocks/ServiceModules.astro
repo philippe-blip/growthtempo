@@ -1,0 +1,39 @@
+---
+interface ServiceModule {
+  name: string;
+  description: string;
+  optional?: boolean;
+}
+
+interface Props {
+  modules: ServiceModule[];
+  title?: string;
+}
+
+const { modules, title = 'Modules disponibles' } = Astro.props;
+---
+
+<section class="my-8">
+  <h3 class="text-xl font-bold text-gray-900 mb-6">{title}</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {modules.map((module) => (
+      <div
+        class={`rounded-lg p-4 border ${
+          module.optional
+            ? 'bg-yellow-50 border-yellow-200'
+            : 'bg-blue-50 border-blue-200'
+        }`}
+      >
+        <div class="flex items-start justify-between mb-2">
+          <h4 class="font-semibold text-gray-900">{module.name}</h4>
+          {module.optional && (
+            <span class="text-xs bg-yellow-200 text-yellow-800 px-2 py-1 rounded">
+              Optionnel
+            </span>
+          )}
+        </div>
+        <p class="text-gray-700 text-sm">{module.description}</p>
+      </div>
+    ))}
+  </div>
+</section>

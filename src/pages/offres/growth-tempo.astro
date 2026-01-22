@@ -1,0 +1,106 @@
+---
+import OfferLayout from '../../layouts/OfferLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import ScopeBlock from '../../components/blocks/ScopeBlock.astro';
+import HowWeWork from '../../components/sections/HowWeWork.astro';
+import ProofStrip from '../../components/sections/ProofStrip.astro';
+import FAQAccordion from '../../components/blocks/FAQAccordion.astro';
+import CTASection from '../../components/sections/CTASection.astro';
+---
+
+<OfferLayout
+  title="Growth Tempo - Done with you"
+  description="Pilotage, organisation, rythme et KPIs. Done-with-you pour mettre en place un operating rhythm efficace."
+>
+  <Hero
+    title="Growth Tempo"
+    subtitle="Done with you"
+    description="Pilotage, orga, rythme, KPIs. Priorités, rocks/OKR light, arbitrage, operating rhythm, scorecards, org design."
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Périmètre</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Ce qu'on met en place</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• Priorités et arbitrage</li>
+            <li>• Rocks/OKR light</li>
+            <li>• Operating rhythm (cadence, agendas)</li>
+            <li>• Scorecards (KPI utiles, pas vanity)</li>
+            <li>• Org design : rôles, responsabilités, décisions</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Livrables typiques</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• Scorecard + rituels</li>
+            <li>• Backlog d'issues + ownership</li>
+            <li>• Système de reporting "qui sert"</li>
+            <li>• Structure d'organisation claire</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <ScopeBlock
+        do={[
+          'Priorités et arbitrage',
+          'Rocks/OKR light',
+          'Operating rhythm efficace',
+          'Scorecards avec KPI utiles',
+          'Org design clair',
+        ]}
+        dont={[
+          'On veut juste quelqu\'un pour exécuter du marketing',
+          'Pas dispo pour un rythme hebdo',
+          'Pas d\'engagement sur la durée',
+        ]}
+      />
+    </div>
+  </section>
+
+  <HowWeWork />
+
+  <ProofStrip
+    metrics={[
+      { value: '3x', label: 'Productivité moyenne' },
+      { value: '85%', label: 'Taux de rétention' },
+    ]}
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <FAQAccordion
+        items={[
+          {
+            question: 'Quel est le rythme de travail ?',
+            answer: 'Nous travaillons avec un rythme hebdomadaire pour maintenir la cadence et l\'alignement.',
+          },
+          {
+            question: 'Combien de temps dure l\'engagement ?',
+            answer: 'L\'engagement minimum est de 3 mois, avec possibilité de continuer selon vos besoins.',
+          },
+          {
+            question: 'Quelle est la différence avec un consultant classique ?',
+            answer: 'Nous ne faisons pas que conseiller : nous mettons en place les systèmes avec vous et assurons le suivi continu.',
+          },
+          {
+            question: 'Faut-il avoir une équipe en place ?',
+            answer: 'Oui, cette offre est conçue pour les équipes qui veulent améliorer leur organisation et leur rythme de travail.',
+          },
+          {
+            question: 'Comment mesurez-vous le succès ?',
+            answer: 'Par des métriques concrètes : productivité, clarté des priorités, vitesse d\'exécution, satisfaction de l\'équipe.',
+          },
+        ]}
+      />
+    </div>
+  </section>
+
+  <CTASection />
+</OfferLayout>

@@ -1,0 +1,130 @@
+---
+import SolutionLayout from '../../layouts/SolutionLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import ScopeBlock from '../../components/blocks/ScopeBlock.astro';
+import HowWeWork from '../../components/sections/HowWeWork.astro';
+import ProofStrip from '../../components/sections/ProofStrip.astro';
+import FAQAccordion from '../../components/blocks/FAQAccordion.astro';
+import CTASection from '../../components/sections/CTASection.astro';
+---
+
+<SolutionLayout
+  title="Founder Bottleneck - Solutions"
+  description="Le fondateur est le goulot d'étranglement de la croissance. Solutions pour déléguer, organiser et scaler."
+>
+  <Hero
+    title="Founder Bottleneck"
+    description="Le fondateur est le goulot d'étranglement de la croissance. Vous êtes surchargé, tout passe par vous, et l'équipe attend vos décisions."
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Symptômes typiques</h2>
+      <ul class="space-y-3 text-gray-700">
+        <li class="flex items-start">
+          <span class="mr-2">•</span>
+          <span>Tout passe par vous : décisions, validations, approbations</span>
+        </li>
+        <li class="flex items-start">
+          <span class="mr-2">•</span>
+          <span>Votre équipe attend vos instructions avant d'agir</span>
+        </li>
+        <li class="flex items-start">
+          <span class="mr-2">•</span>
+          <span>Vous êtes surchargé et ne pouvez plus scaler</span>
+        </li>
+        <li class="flex items-start">
+          <span class="mr-2">•</span>
+          <span>Les projets ralentissent quand vous n'êtes pas disponible</span>
+        </li>
+        <li class="flex items-start">
+          <span class="mr-2">•</span>
+          <span>Vous voulez déléguer mais ne savez pas comment</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Ce qu'on met en place</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Organisation</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• Rôles et responsabilités clairs</li>
+            <li>• Processus de décision définis</li>
+            <li>• Système de délégation efficace</li>
+            <li>• Operating rhythm régulier</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Autonomie</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• Priorités claires pour l'équipe</li>
+            <li>• Scorecards pour suivre les progrès</li>
+            <li>• Backlog avec ownership</li>
+            <li>• Système de reporting qui sert</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <ScopeBlock
+        do={[
+          'Mise en place d\'un operating rhythm',
+          'Clarification des rôles et responsabilités',
+          'Système de délégation efficace',
+          'Priorités et arbitrage clairs',
+        ]}
+        dont={[
+          'Recrutement massif sans organisation',
+          'Outils magiques sans processus',
+        ]}
+      />
+    </div>
+  </section>
+
+  <HowWeWork />
+
+  <ProofStrip
+    metrics={[
+      { value: '60%', label: 'Réduction du temps du fondateur' },
+      { value: '2x', label: 'Vitesse d\'exécution' },
+    ]}
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <FAQAccordion
+        items={[
+          {
+            question: 'Combien de temps pour voir des résultats ?',
+            answer: 'Les premiers résultats apparaissent en 4-6 semaines, avec une amélioration continue sur 3-6 mois.',
+          },
+          {
+            question: 'Faut-il avoir une équipe en place ?',
+            answer: 'Oui, cette solution est conçue pour les équipes existantes qui veulent gagner en autonomie.',
+          },
+          {
+            question: 'Quelle offre Growth Tempo correspond à ce problème ?',
+            answer: 'Growth Tempo (done-with-you) est la solution idéale pour résoudre le founder bottleneck.',
+          },
+          {
+            question: 'Comment mesurez-vous le succès ?',
+            answer: 'Par la réduction du temps du fondateur, l\'augmentation de l\'autonomie de l\'équipe, et la vitesse d\'exécution.',
+          },
+          {
+            question: 'Est-ce que ça fonctionne pour les petites équipes ?',
+            answer: 'Oui, même avec 2-3 personnes, clarifier les rôles et mettre en place un rythme peut faire une grande différence.',
+          },
+        ]}
+      />
+    </div>
+  </section>
+
+  <CTASection />
+</SolutionLayout>

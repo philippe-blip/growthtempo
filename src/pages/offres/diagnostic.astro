@@ -1,0 +1,131 @@
+---
+import OfferLayout from '../../layouts/OfferLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import ScopeBlock from '../../components/blocks/ScopeBlock.astro';
+import HowWeWork from '../../components/sections/HowWeWork.astro';
+import ProofStrip from '../../components/sections/ProofStrip.astro';
+import FAQAccordion from '../../components/blocks/FAQAccordion.astro';
+import CTASection from '../../components/sections/CTASection.astro';
+---
+
+<OfferLayout
+  title="Diagnostic - Growth Tempo"
+  description="Qualifiez votre situation et obtenez un plan actionnable avec scorecard, backlog priorisé et plan 30/90 jours."
+>
+  <Hero
+    title="Diagnostic"
+    subtitle="Qualifiez votre situation + obtenez un plan actionnable"
+    description="Inputs : accès analytics/ads/CRM + 1–2 interviews + audit léger. Outputs : scorecard, backlog priorisé, plan 30/90 jours, recommandations d'offre."
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Symptômes typiques</h2>
+      <ul class="space-y-3 text-gray-700">
+        <li class="flex items-start">
+          <span class="mr-2">•</span>
+          <span>Vous ne savez pas par où commencer pour accélérer votre croissance</span>
+        </li>
+        <li class="flex items-start">
+          <span class="mr-2">•</span>
+          <span>Vous avez trop de projets en parallèle, rien n'avance vraiment</span>
+        </li>
+        <li class="flex items-start">
+          <span class="mr-2">•</span>
+          <span>Vous manquez de métriques fiables pour prendre des décisions</span>
+        </li>
+        <li class="flex items-start">
+          <span class="mr-2">•</span>
+          <span>Vous ne savez pas quelle offre Growth Tempo vous convient</span>
+        </li>
+        <li class="flex items-start">
+          <span class="mr-2">•</span>
+          <span>Vous avez besoin d'un plan clair et priorisé</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Ce qu'on met en place</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Inputs</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• Accès analytics/ads/CRM</li>
+            <li>• 1–2 interviews avec l'équipe</li>
+            <li>• Audit léger de votre situation</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Outputs</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• Scorecard (acquisition, conversion, ops data)</li>
+            <li>• Backlog priorisé</li>
+            <li>• Plan 30/90 jours</li>
+            <li>• Recommandations d'offre (parmi les 3 autres lignes)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <ScopeBlock
+        do={[
+          'Scorecard avec métriques clés',
+          'Backlog priorisé et actionnable',
+          'Plan 30/90 jours détaillé',
+          'Recommandations d\'offres adaptées',
+        ]}
+        dont={[
+          'Audit de 60 pages exhaustif',
+          'Stratégie sans exécution',
+          'Rapport de 100 pages non actionnable',
+        ]}
+      />
+    </div>
+  </section>
+
+  <HowWeWork />
+
+  <ProofStrip
+    metrics={[
+      { value: '48h', label: 'Délai moyen de livraison' },
+      { value: '95%', label: 'Clients satisfaits' },
+    ]}
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <FAQAccordion
+        items={[
+          {
+            question: 'Combien de temps prend le diagnostic ?',
+            answer: 'Le diagnostic se fait en 1-2 semaines, avec 1-2 interviews et un audit léger de vos outils.',
+          },
+          {
+            question: 'Quels outils dois-je donner accès ?',
+            answer: 'Analytics (Google Analytics, etc.), plateformes publicitaires (Google Ads, etc.), et CRM si vous en avez un.',
+          },
+          {
+            question: 'Le diagnostic inclut-il des recommandations d\'offres ?',
+            answer: 'Oui, à la fin du diagnostic, nous vous recommandons quelle(s) offre(s) Growth Tempo vous convient le mieux.',
+          },
+          {
+            question: 'Puis-je utiliser le diagnostic sans prendre d\'autre offre ?',
+            answer: 'Absolument. Le diagnostic est une offre autonome qui vous donne un plan actionnable, même si vous ne continuez pas avec nous.',
+          },
+          {
+            question: 'Le plan 30/90 jours est-il détaillé ?',
+            answer: 'Oui, le plan inclut des actions concrètes, des priorités claires, et des métriques à suivre pour chaque période.',
+          },
+        ]}
+      />
+    </div>
+  </section>
+
+  <CTASection />
+</OfferLayout>

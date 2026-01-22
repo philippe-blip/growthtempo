@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contact - Growth Tempo"
+  description="Contactez Growth Tempo pour discuter de vos besoins et découvrir comment nous pouvons vous aider."
+>
+  <section class="py-20 bg-gradient-to-b from-blue-50 to-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        Contact
+      </h1>
+      <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+        Discutons de vos besoins et découvrons comment nous pouvons vous aider
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl">
+      <form class="space-y-6" method="POST" action="#" data-track="contact_form">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
+            Nom *
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          />
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+            Email *
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          />
+        </div>
+
+        <div>
+          <label for="company" class="block text-sm font-medium text-gray-700 mb-2">
+            Entreprise
+          </label>
+          <input
+            type="text"
+            id="company"
+            name="company"
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          />
+        </div>
+
+        <div>
+          <label for="type" class="block text-sm font-medium text-gray-700 mb-2">
+            Type de demande *
+          </label>
+          <select
+            id="type"
+            name="type"
+            required
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          >
+            <option value="">Sélectionnez...</option>
+            <option value="diagnostic">Diagnostic</option>
+            <option value="growth-tempo">Growth Tempo</option>
+            <option value="lead-gen">Lead Gen</option>
+            <option value="automation-ai-ops">Automation & AI Ops</option>
+            <option value="other">Autre</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+            Message *
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            required
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          ></textarea>
+        </div>
+
+        <div>
+          <button
+            type="submit"
+            class="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+            data-track="cta_contact"
+          >
+            Envoyer
+          </button>
+        </div>
+      </form>
+
+      <div class="mt-12 pt-12 border-t border-gray-200">
+        <h2 class="text-xl font-bold text-gray-900 mb-4">Autres moyens de contact</h2>
+        <div class="space-y-2 text-gray-700">
+          <p>Email : contact@growthtempo.com</p>
+          <p>Téléphone : +33 X XX XX XX XX</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

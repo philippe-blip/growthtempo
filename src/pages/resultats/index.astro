@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CaseStudyTeaser from '../../components/cards/CaseStudyTeaser.astro';
+import CTASection from '../../components/sections/CTASection.astro';
+import { getCollection } from 'astro:content';
+
+const casStudies = await getCollection('cas');
+---
+
+<BaseLayout
+  title="Résultats - Growth Tempo"
+  description="Découvrez les résultats de nos clients : cas studies, métriques, témoignages."
+>
+  <section class="py-20 bg-gradient-to-b from-blue-50 to-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        Résultats
+      </h1>
+      <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+        Découvrez comment nos clients accélèrent leur croissance
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      {casStudies.length === 0 ? (
+        <div class="text-center py-12">
+          <p class="text-gray-600">Les cas studies seront bientôt disponibles.</p>
+        </div>
+      ) : (
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {casStudies.map((cas) => (
+            <CaseStudyTeaser
+              title={cas.data.title}
+              client={cas.data.client}
+              metrics={cas.data.metrics}
+              summary={cas.data.challenge}
+              link={`/resultats/cas/${cas.slug}`}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <CTASection />
+</BaseLayout>

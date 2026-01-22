@@ -1,0 +1,40 @@
+---
+interface Props {
+  typicalSituations: string[];
+  antiFit: string[];
+}
+
+const { typicalSituations, antiFit } = Astro.props;
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+  <!-- Pour vous si -->
+  <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+    <h3 class="text-lg font-bold text-green-900 mb-4">
+      Pour vous si...
+    </h3>
+    <ul class="space-y-2">
+      {typicalSituations.map((situation) => (
+        <li class="text-green-800 flex items-start">
+          <span class="mr-2">✓</span>
+          <span>{situation}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <!-- Pas pour vous si -->
+  <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+    <h3 class="text-lg font-bold text-red-900 mb-4">
+      Pas pour vous si...
+    </h3>
+    <ul class="space-y-2">
+      {antiFit.map((situation) => (
+        <li class="text-red-800 flex items-start">
+          <span class="mr-2">✗</span>
+          <span>{situation}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>

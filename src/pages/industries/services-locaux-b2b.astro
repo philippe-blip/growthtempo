@@ -1,0 +1,142 @@
+---
+import IndustryLayout from '../../layouts/IndustryLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import IndustryFit from '../../components/cards/IndustryFit.astro';
+import ProofStrip from '../../components/sections/ProofStrip.astro';
+import FAQAccordion from '../../components/blocks/FAQAccordion.astro';
+import CTASection from '../../components/sections/CTASection.astro';
+---
+
+<IndustryLayout
+  title="Services locaux B2B - Industries"
+  description="Solutions pour comptables, intégrateurs Odoo, avocats et autres services locaux B2B."
+>
+  <Hero
+    title="Services locaux B2B"
+    description="Comptables, intégrateurs Odoo, avocats, consultants, et autres services professionnels locaux."
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Contexte</h2>
+      <p class="text-gray-700 mb-4">
+        Les services locaux B2B font face à des défis spécifiques : acquisition de clients qualifiés,
+        gestion de la croissance sans perdre la qualité, et optimisation des processus opérationnels.
+      </p>
+      <p class="text-gray-700">
+        Que vous soyez comptable, intégrateur Odoo, avocat, ou consultant, nos offres sont adaptées
+        à vos besoins spécifiques.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <IndustryFit
+        typicalSituations={[
+          'Vous cherchez à acquérir des clients qualifiés localement',
+          'Vous voulez automatiser vos processus opérationnels',
+          'Vous avez besoin de clarifier vos priorités et votre organisation',
+          'Vous voulez améliorer la qualité de vos leads',
+        ]}
+        antiFit={[
+          'Vous cherchez uniquement des leads non qualifiés en volume',
+          'Vous n\'êtes pas prêt à investir dans la qualité',
+          'Vous voulez des solutions "magiques" sans effort',
+        ]}
+      />
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Offres pertinentes</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <a
+          href="/offres/lead-gen"
+          class="bg-blue-50 border border-blue-200 rounded-lg p-6 hover:bg-blue-100 transition-colors"
+        >
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Lead Gen</h3>
+          <p class="text-gray-700 mb-4">
+            Capturez l'intention existante avec SEO + SEA. Idéal pour acquérir des clients qualifiés localement.
+          </p>
+          <span class="text-blue-600 font-medium">En savoir plus →</span>
+        </a>
+        <a
+          href="/offres/growth-tempo"
+          class="bg-blue-50 border border-blue-200 rounded-lg p-6 hover:bg-blue-100 transition-colors"
+        >
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Growth Tempo</h3>
+          <p class="text-gray-700 mb-4">
+            Organisez votre croissance avec un operating rhythm efficace. Priorités, rythme, KPIs.
+          </p>
+          <span class="text-blue-600 font-medium">En savoir plus →</span>
+        </a>
+        <a
+          href="/offres/automation-ai-ops"
+          class="bg-blue-50 border border-blue-200 rounded-lg p-6 hover:bg-blue-100 transition-colors"
+        >
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Automation & AI Ops</h3>
+          <p class="text-gray-700 mb-4">
+            Automatisez vos processus : routing leads, follow-up, enrichissement, intégrations.
+          </p>
+          <span class="text-blue-600 font-medium">En savoir plus →</span>
+        </a>
+        <a
+          href="/offres/diagnostic"
+          class="bg-blue-50 border border-blue-200 rounded-lg p-6 hover:bg-blue-100 transition-colors"
+        >
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Diagnostic</h3>
+          <p class="text-gray-700 mb-4">
+            Commencez par un diagnostic pour identifier vos priorités et choisir la bonne offre.
+          </p>
+          <span class="text-blue-600 font-medium">En savoir plus →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <ProofStrip
+    testimonials={[
+      {
+        text: 'Lead Gen nous a permis de multiplier nos clients qualifiés par 3 en 6 mois.',
+        author: 'Comptable, Paris',
+      },
+      {
+        text: 'Growth Tempo nous a aidés à organiser notre croissance sans perdre la qualité.',
+        author: 'Intégrateur Odoo, Lyon',
+      },
+    ]}
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <FAQAccordion
+        items={[
+          {
+            question: 'Quelle offre me convient le mieux ?',
+            answer: 'Commencez par un Diagnostic pour identifier vos priorités. Ensuite, selon vos besoins : Lead Gen pour l\'acquisition, Growth Tempo pour l\'organisation, Automation & AI Ops pour les processus.',
+          },
+          {
+            question: 'Combien de temps pour voir des résultats ?',
+            answer: 'Cela dépend de l\'offre : Diagnostic (1-2 semaines), Lead Gen (3-6 mois pour SEO, quelques semaines pour SEA), Growth Tempo (4-6 semaines), Automation (2-4 semaines).',
+          },
+          {
+            question: 'Travaillez-vous avec des outils spécifiques ?',
+            answer: 'Nous travaillons avec vos outils existants (CRM, Odoo, etc.). Si vous n\'en avez pas, nous pouvons vous recommander des solutions adaptées.',
+          },
+          {
+            question: 'Quels sont vos tarifs ?',
+            answer: 'Les tarifs varient selon l\'offre et vos besoins. Contactez-nous pour un devis personnalisé.',
+          },
+          {
+            question: 'Proposez-vous des engagements à long terme ?',
+            answer: 'Oui, nous proposons des engagements adaptés à vos besoins, avec possibilité d\'ajustement selon l\'évolution de votre situation.',
+          },
+        ]}
+      />
+    </div>
+  </section>
+
+  <CTASection />
+</IndustryLayout>

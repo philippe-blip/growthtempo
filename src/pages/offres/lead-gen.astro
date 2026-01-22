@@ -1,0 +1,149 @@
+---
+import OfferLayout from '../../layouts/OfferLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import ScopeBlock from '../../components/blocks/ScopeBlock.astro';
+import ServiceModules from '../../components/blocks/ServiceModules.astro';
+import HowWeWork from '../../components/sections/HowWeWork.astro';
+import ProofStrip from '../../components/sections/ProofStrip.astro';
+import FAQAccordion from '../../components/blocks/FAQAccordion.astro';
+import CTASection from '../../components/sections/CTASection.astro';
+---
+
+<OfferLayout
+  title="Lead Gen - Demand Capture (SEO + SEA + CRO)"
+  description="Done-for-you Demand Capture : SEO d'exécution continue, SEA (Google Ads), CRO minimal, tracking & CRM. Un système unique avec 2 piliers."
+>
+  <Hero
+    title="Lead Gen"
+    subtitle="Done for you - Demand Capture"
+    description="SEO + SEA + CRO minimal + tracking. Un système unique avec 2 piliers (SEO / SEA) et des modules."
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8">Structure de l'offre</h2>
+      
+      <div class="space-y-12">
+        <!-- Pilier 1 - SEO -->
+        <div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Pilier 1 — SEO d'exécution continue</h3>
+          <ul class="space-y-2 text-gray-700 mb-4">
+            <li>• Backlog + exécution mensuelle</li>
+            <li>• Pages / clusters / maillage</li>
+            <li>• Technique "utile" (indexation, perf, structure)</li>
+            <li>• Programmatique si data + modèle ok</li>
+          </ul>
+        </div>
+
+        <!-- Pilier 2 - SEA -->
+        <div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Pilier 2 — SEA (Demand Capture)</h3>
+          <ul class="space-y-2 text-gray-700 mb-4">
+            <li>• Google Ads Search (et PMax seulement si cadré)</li>
+            <li>• Structure propre (intent, exclusions, requêtes)</li>
+            <li>• Landing pages orientées conversion (CRO minimal)</li>
+          </ul>
+        </div>
+
+        <!-- Socle obligatoire -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Socle obligatoire — Tracking & CRM</h3>
+          <p class="text-gray-700 mb-4">Sans tracking, pas de promesse. Ce socle est obligatoire :</p>
+          <ul class="space-y-2 text-gray-700">
+            <li>• Enhanced Conversions / CAPI si pertinent</li>
+            <li>• Tracking des leads (source, qualité, offline conversions si possible)</li>
+            <li>• Boucle de retour qualité (call outcomes / deal stage)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <ServiceModules
+        title="Modules optionnels"
+        modules={[
+          {
+            name: 'Site factory / multi-sites',
+            description: 'Création et gestion de plusieurs sites pour votre présence en ligne',
+            optional: true,
+          },
+          {
+            name: 'Contenus programmatique à grande échelle',
+            description: 'Génération automatisée de contenus SEO à grande échelle',
+            optional: true,
+          },
+          {
+            name: 'Playbooks de sales follow-up',
+            description: 'Processus et scripts pour le suivi commercial (si CRM prêt)',
+            optional: true,
+          },
+        ]}
+      />
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <ScopeBlock
+        do={[
+          'SEO d\'exécution continue',
+          'SEA (Google Ads Search, PMax si cadré)',
+          'CRO minimal sur landing pages',
+          'Tracking & CRM complet',
+        ]}
+        dont={[
+          'Social ads "créa studio"',
+          'Growth hacks multicanaux',
+          'Refonte de marque',
+        ]}
+        sometimes={[
+          'Site factory / multi-sites',
+          'Contenus programmatique à grande échelle',
+          'Playbooks de sales follow-up (si CRM prêt)',
+        ]}
+      />
+    </div>
+  </section>
+
+  <HowWeWork />
+
+  <ProofStrip
+    metrics={[
+      { value: '3x', label: 'Multiplicateur de leads qualifiés' },
+      { value: '40%', label: 'Amélioration du taux de conversion' },
+    ]}
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <FAQAccordion
+        items={[
+          {
+            question: 'Pourquoi le tracking est-il obligatoire ?',
+            answer: 'Sans tracking fiable, nous ne pouvons pas mesurer la qualité des leads ni optimiser les campagnes. C\'est la base de notre promesse.',
+          },
+          {
+            question: 'Combien de temps avant de voir des résultats ?',
+            answer: 'Pour le SEO, comptez 3-6 mois. Pour le SEA, les premiers résultats apparaissent en quelques semaines.',
+          },
+          {
+            question: 'Faut-il avoir un CRM en place ?',
+            answer: 'C\'est fortement recommandé pour la boucle de retour qualité. Nous pouvons vous aider à en mettre un en place si nécessaire.',
+          },
+          {
+            question: 'Pourquoi seulement Google Ads et pas les réseaux sociaux ?',
+            answer: 'Nous nous concentrons sur la capture d\'intention existante (recherche). Les réseaux sociaux nécessitent une approche différente (création de demande).',
+          },
+          {
+            question: 'Qu\'est-ce que le CRO minimal ?',
+            answer: 'Optimisations de base des landing pages pour améliorer les conversions : structure, CTA, formulaire, etc. Pas de refonte complète.',
+          },
+        ]}
+      />
+    </div>
+  </section>
+
+  <CTASection />
+</OfferLayout>

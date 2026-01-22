@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTASection from '../../components/sections/CTASection.astro';
+import { INDUSTRIES } from '../../utils/constants';
+---
+
+<BaseLayout
+  title="Industries - Growth Tempo"
+  description="Solutions adaptées à votre industrie : services locaux B2B, services terrain, SaaS, DTC e-commerce."
+>
+  <section class="py-20 bg-gradient-to-b from-blue-50 to-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        Industries
+      </h1>
+      <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+        Des solutions adaptées à votre industrie
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {INDUSTRIES.map((industry) => (
+          <a
+            href={`/industries/${industry.slug}`}
+            class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow"
+          >
+            <h3 class="text-xl font-bold text-gray-900 mb-2">{industry.title}</h3>
+            <p class="text-gray-700">{industry.description}</p>
+            <span class="inline-block mt-4 text-blue-600 font-medium">
+              En savoir plus →
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+</BaseLayout>

@@ -1,0 +1,130 @@
+---
+import SolutionLayout from '../../layouts/SolutionLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import ScopeBlock from '../../components/blocks/ScopeBlock.astro';
+import HowWeWork from '../../components/sections/HowWeWork.astro';
+import ProofStrip from '../../components/sections/ProofStrip.astro';
+import FAQAccordion from '../../components/blocks/FAQAccordion.astro';
+import CTASection from '../../components/sections/CTASection.astro';
+---
+
+<SolutionLayout
+  title="Qualité des leads - Solutions"
+  description="Trop de leads, mais peu de qualité et de conversion. Solutions pour améliorer la qualité et le tracking des leads."
+>
+  <Hero
+    title="Qualité des leads"
+    description="Trop de leads, mais peu de qualité et de conversion. Vous ne savez pas d'où viennent les bons leads ni comment les reproduire."
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Symptômes typiques</h2>
+      <ul class="space-y-3 text-gray-700">
+        <li class="flex items-start">
+          <span class="mr-2">•</span>
+          <span>Beaucoup de leads, mais peu se convertissent</span>
+        </li>
+        <li class="flex items-start">
+          <span class="mr-2">•</span>
+          <span>Vous ne savez pas d'où viennent les bons leads</span>
+        </li>
+        <li class="flex items-start">
+          <span class="mr-2">•</span>
+          <span>Le tracking des leads est incomplet ou inexistant</span>
+        </li>
+        <li class="flex items-start">
+          <span class="mr-2">•</span>
+          <span>Pas de boucle de retour qualité (call outcomes, deal stage)</span>
+        </li>
+        <li class="flex items-start">
+          <span class="mr-2">•</span>
+          <span>Vous dépensez sur des canaux qui ne convertissent pas</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Ce qu'on met en place</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Tracking</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• Enhanced Conversions / CAPI</li>
+            <li>• Tracking complet des leads (source, qualité)</li>
+            <li>• Offline conversions si pertinent</li>
+            <li>• Boucle de retour qualité</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Optimisation</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• Focus sur les canaux qui convertissent</li>
+            <li>• Amélioration de la qualité (exclusions, ciblage)</li>
+            <li>• CRO minimal sur landing pages</li>
+            <li>• Alignement sales/marketing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <ScopeBlock
+        do={[
+          'Tracking complet des leads',
+          'Boucle de retour qualité',
+          'Optimisation des canaux performants',
+          'CRO minimal',
+        ]}
+        dont={[
+          'Growth hacks multicanaux sans tracking',
+          'Refonte complète sans données',
+        ]}
+      />
+    </div>
+  </section>
+
+  <HowWeWork />
+
+  <ProofStrip
+    metrics={[
+      { value: '3x', label: 'Amélioration de la qualité' },
+      { value: '40%', label: 'Taux de conversion' },
+    ]}
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <FAQAccordion
+        items={[
+          {
+            question: 'Pourquoi le tracking est-il si important ?',
+            answer: 'Sans tracking fiable, vous ne pouvez pas savoir d\'où viennent les bons leads ni optimiser vos investissements.',
+          },
+          {
+            question: 'Combien de temps pour voir des résultats ?',
+            answer: 'Le tracking peut être mis en place en 2-4 semaines. Les optimisations commencent à porter leurs fruits en 1-3 mois.',
+          },
+          {
+            question: 'Faut-il avoir un CRM ?',
+            answer: 'C\'est fortement recommandé pour la boucle de retour qualité. Nous pouvons vous aider à en mettre un en place.',
+          },
+          {
+            question: 'Quelle offre Growth Tempo correspond à ce problème ?',
+            answer: 'Lead Gen (done-for-you) est la solution idéale, avec son socle obligatoire de tracking & CRM.',
+          },
+          {
+            question: 'Comment mesurez-vous l\'amélioration de la qualité ?',
+            answer: 'Par le taux de conversion, le coût par lead qualifié, et les métriques de la boucle de retour qualité (call outcomes, deal stage).',
+          },
+        ]}
+      />
+    </div>
+  </section>
+
+  <CTASection />
+</SolutionLayout>

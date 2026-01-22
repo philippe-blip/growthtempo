@@ -1,0 +1,44 @@
+---
+import Card from '../ui/Card.astro';
+
+interface Props {
+  title: string;
+  promise: string;
+  forWho: string;
+  ctaText: string;
+  ctaLink: string;
+  icon?: string;
+  index?: number;
+}
+
+const { title, promise, forWho, ctaText, ctaLink, icon, index = 1 } = Astro.props;
+
+// Alternance des couleurs : 1 = blanc, 2 = vert, 3 = dark
+const cardClass = index === 1 ? 'bg-white' : index === 2 ? 'bg-[#b9ff66]' : 'bg-[#191a23]';
+const titleClass = index === 1 ? 'greenhead' : index === 2 ? 'whitehead' : 'whitehead';
+const textClass = index === 3 ? 'text-white' : 'text-black';
+const promiseClass = index === 3 ? 'text-white opacity-90' : 'text-black';
+const forWhoClass = index === 3 ? 'text-white opacity-75' : 'text-black opacity-80';
+const linkClass = index === 3 ? 'text-[#b9ff66]' : 'text-black';
+---
+
+<Card isUnderline={true}>
+  <div class={`${cardClass} p-8 sm:p-[50px] rounded-[45px] transition-all duration-200 hover:scale-105`}>
+    <h3 class={`text-xl font-bold mb-4 ${textClass}`}>
+      <span class={`${titleClass} inline-block mb-2`}>{title}</span>
+    </h3>
+    <p class={`mb-4 ${promiseClass} font-medium`}>{promise}</p>
+    <p class={`text-sm mb-6 ${forWhoClass}`}>
+      <span class="font-semibold">Pour qui :</span> {forWho}
+    </p>
+    <a
+      href={ctaLink}
+      class={`inline-flex items-center gap-2 ${linkClass} font-medium hover:opacity-80 transition-opacity no-underline`}
+    >
+      {ctaText}
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
+    </a>
+  </div>
+</Card>

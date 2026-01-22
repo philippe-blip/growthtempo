@@ -1,0 +1,43 @@
+---
+import Card from '../ui/Card.astro';
+
+interface Props {
+  title: string;
+  client: string;
+  metrics: Array<{ label: string; value: string }>;
+  summary: string;
+  link: string;
+}
+
+const { title, client, metrics, summary, link } = Astro.props;
+---
+
+<Card>
+  <div class="flex p-[60px] h-full bg-[#191a23] text-white rounded-[45px] m-[1px] transition-all duration-200 hover:scale-105">
+  <div class="flex flex-col gap-5">
+    <div class="mb-2">
+      <span class="text-sm text-white opacity-90">{client}</span>
+      <h3 class="text-xl font-bold mt-1 text-white">{title}</h3>
+    </div>
+    <p class="mb-4 text-white opacity-95 font-medium">{summary}</p>
+    
+    {metrics.length > 0 && (
+      <div class="grid grid-cols-2 gap-4 mb-4">
+        {metrics.slice(0, 2).map((metric) => (
+          <div>
+            <div class="text-2xl font-bold text-[#b9ff66]">{metric.value}</div>
+            <div class="text-sm text-white opacity-85">{metric.label}</div>
+          </div>
+        ))}
+      </div>
+    )}
+    
+    <a href={link} class="flex items-center gap-[15px] text-[#b9ff66] hover:opacity-80 transition-opacity no-underline font-medium">
+      <span>Lire le cas complet</span>
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
+    </a>
+  </div>
+</div>
+</Card>

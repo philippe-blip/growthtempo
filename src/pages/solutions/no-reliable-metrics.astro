@@ -1,0 +1,130 @@
+---
+import SolutionLayout from '../../layouts/SolutionLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import ScopeBlock from '../../components/blocks/ScopeBlock.astro';
+import HowWeWork from '../../components/sections/HowWeWork.astro';
+import ProofStrip from '../../components/sections/ProofStrip.astro';
+import FAQAccordion from '../../components/blocks/FAQAccordion.astro';
+import CTASection from '../../components/sections/CTASection.astro';
+---
+
+<SolutionLayout
+  title="Pas de métriques fiables - Solutions"
+  description="Impossible de prendre des décisions basées sur les données. Solutions pour mettre en place des métriques fiables et actionnables."
+>
+  <Hero
+    title="Pas de métriques fiables"
+    description="Impossible de prendre des décisions basées sur les données. Vous avez des métriques, mais elles ne sont pas fiables, pas à jour, ou pas actionnables."
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Symptômes typiques</h2>
+      <ul class="space-y-3 text-gray-700">
+        <li class="flex items-start">
+          <span class="mr-2">•</span>
+          <span>Vous avez des métriques, mais elles ne sont pas fiables</span>
+        </li>
+        <li class="flex items-start">
+          <span class="mr-2">•</span>
+          <span>Les données ne sont pas à jour ou incomplètes</span>
+        </li>
+        <li class="flex items-start">
+          <span class="mr-2">•</span>
+          <span>Vous ne savez pas quelles métriques suivre</span>
+        </li>
+        <li class="flex items-start">
+          <span class="mr-2">•</span>
+          <span>Pas de scorecard claire et actionnable</span>
+        </li>
+        <li class="flex items-start">
+          <span class="mr-2">•</span>
+          <span>Vous prenez des décisions à l'aveugle</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Ce qu'on met en place</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Scorecard</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• KPI utiles, pas vanity metrics</li>
+            <li>• Métriques alignées avec vos objectifs</li>
+            <li>• Données à jour et fiables</li>
+            <li>• Visualisation claire</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Tracking & Pipelines</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• Data pipelines pour automatiser la collecte</li>
+            <li>• Dashboards actionnables</li>
+            <li>• Intégrations entre vos outils</li>
+            <li>• Système de reporting qui sert</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <ScopeBlock
+        do={[
+          'Scorecard avec KPI utiles',
+          'Data pipelines automatisées',
+          'Dashboards actionnables',
+          'Intégrations entre outils',
+        ]}
+        dont={[
+          'Dashboards avec 50 métriques inutiles',
+          'Outils complexes sans valeur',
+        ]}
+      />
+    </div>
+  </section>
+
+  <HowWeWork />
+
+  <ProofStrip
+    metrics={[
+      { value: '90%', label: 'Fiabilité des données' },
+      { value: '2x', label: 'Vitesse de décision' },
+    ]}
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <FAQAccordion
+        items={[
+          {
+            question: 'Qu\'est-ce qu\'une métrique "utile" vs "vanity" ?',
+            answer: 'Une métrique utile est actionnable et liée à vos objectifs. Une vanity metric fait bien mais ne change rien à vos décisions.',
+          },
+          {
+            question: 'Combien de temps pour mettre en place un scorecard ?',
+            answer: '2-4 semaines pour identifier les bonnes métriques et mettre en place le tracking. Le scorecard évolue ensuite avec vos besoins.',
+          },
+          {
+            question: 'Faut-il avoir des outils spécifiques ?',
+            answer: 'Nous travaillons avec vos outils existants. Si nécessaire, nous pouvons recommander des solutions simples et efficaces.',
+          },
+          {
+            question: 'Quelle offre Growth Tempo correspond à ce problème ?',
+            answer: 'Growth Tempo (done-with-you) pour le scorecard et l\'organisation, ou Automation & AI Ops (done-for-you) pour les pipelines automatisées.',
+          },
+          {
+            question: 'Comment garantissez-vous la fiabilité des données ?',
+            answer: 'Par des pipelines automatisées, des validations, et une documentation claire. Nous mettons aussi en place des alertes en cas de problème.',
+          },
+        ]}
+      />
+    </div>
+  </section>
+
+  <CTASection />
+</SolutionLayout>

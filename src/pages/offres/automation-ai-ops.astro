@@ -1,0 +1,154 @@
+---
+import OfferLayout from '../../layouts/OfferLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import ScopeBlock from '../../components/blocks/ScopeBlock.astro';
+import HowWeWork from '../../components/sections/HowWeWork.astro';
+import ProofStrip from '../../components/sections/ProofStrip.astro';
+import FAQAccordion from '../../components/blocks/FAQAccordion.astro';
+import CTASection from '../../components/sections/CTASection.astro';
+---
+
+<OfferLayout
+  title="Automation & AI Ops - Done for you"
+  description="Done-for-you : n8n workflows, agents IA, intégrations CRM/Odoo, data pipelines, dashboards actionnables."
+>
+  <Hero
+    title="Automation & AI Ops"
+    subtitle="Done for you"
+    description="n8n workflows, agents, intégrations, data pipelines, dashboards. Automatisation de flux réels avec owner + métriques."
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Périmètre</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Ce qu'on automatise</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• n8n workflows : routing leads, follow-up, enrichissement, QA</li>
+            <li>• Intégrations CRM/Odoo, email, ads, sheets</li>
+            <li>• Agents : tri, extraction, support interne</li>
+            <li>• Data pipelines + dashboards actionnables</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Livrables typiques</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• Workflow map + backlog</li>
+            <li>• 3–10 automatisations en prod (par phase)</li>
+            <li>• Monitoring + documentation</li>
+            <li>• Dashboards avec métriques clés</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Types d'automatisations -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8">Types d'automatisations</h2>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg border border-gray-200">
+          <h3 class="text-lg font-bold mb-3">Routing & Qualification</h3>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li>• Routing automatique des leads</li>
+            <li>• Enrichissement de données</li>
+            <li>• Qualification et scoring</li>
+            <li>• Assignation intelligente</li>
+          </ul>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg border border-gray-200">
+          <h3 class="text-lg font-bold mb-3">Intégrations & Sync</h3>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li>• CRM ↔ Email ↔ Ads</li>
+            <li>• Odoo ↔ E-commerce</li>
+            <li>• Sheets ↔ Analytics</li>
+            <li>• Webhooks & APIs</li>
+          </ul>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg border border-gray-200">
+          <h3 class="text-lg font-bold mb-3">Agents & Extraction</h3>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li>• Tri et catégorisation</li>
+            <li>• Extraction d'informations</li>
+            <li>• Support interne automatisé</li>
+            <li>• Data pipelines</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6 mb-6">
+        <h3 class="text-lg font-bold text-yellow-900 mb-2">Garde-fous</h3>
+        <p class="text-yellow-800">
+          Pas de "chatbot gadget". On automatise des flux réels, avec owner + métriques. Chaque automatisation doit avoir un objectif clair et mesurable.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <ScopeBlock
+        do={[
+          'n8n workflows (routing, follow-up, enrichissement)',
+          'Intégrations CRM/Odoo, email, ads, sheets',
+          'Agents IA (tri, extraction, support)',
+          'Data pipelines + dashboards',
+        ]}
+        dont={[
+          'Chatbot gadget sans valeur',
+          'Automatisations sans owner ni métriques',
+          'Solutions "magiques" sans fondement',
+        ]}
+      />
+    </div>
+  </section>
+
+  <HowWeWork />
+
+  <ProofStrip
+    metrics={[
+      { value: '70%', label: 'Réduction du temps manuel' },
+      { value: '10+', label: 'Automatisations en prod' },
+    ]}
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <FAQAccordion
+        items={[
+          {
+            question: 'Qu\'est-ce que n8n ?',
+            answer: 'n8n est une plateforme d\'automatisation open-source qui permet de créer des workflows entre différents services et outils.',
+          },
+          {
+            question: 'Combien d\'automatisations peut-on mettre en place ?',
+            answer: 'Nous commençons par 3-10 automatisations prioritaires par phase, selon vos besoins et votre maturité.',
+          },
+          {
+            question: 'Faut-il avoir des outils spécifiques ?',
+            answer: 'Nous travaillons avec vos outils existants (CRM, Odoo, etc.). Si vous n\'en avez pas, nous pouvons vous recommander des solutions.',
+          },
+          {
+            question: 'Comment mesurez-vous l\'impact des automatisations ?',
+            answer: 'Chaque automatisation a des métriques associées : temps économisé, erreurs évitées, vitesse de traitement, etc.',
+          },
+          {
+            question: 'Qu\'est-ce qu\'un agent IA dans ce contexte ?',
+            answer: 'Des agents qui automatisent des tâches spécifiques : tri de leads, extraction d\'informations, support interne, etc. Pas des chatbots génériques.',
+          },
+        ]}
+      />
+    </div>
+  </section>
+
+  <CTASection />
+</OfferLayout>

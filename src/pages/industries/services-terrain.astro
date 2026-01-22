@@ -1,0 +1,267 @@
+---
+import IndustryLayout from '../../layouts/IndustryLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import IndustryFit from '../../components/cards/IndustryFit.astro';
+import ProofStrip from '../../components/sections/ProofStrip.astro';
+import FAQAccordion from '../../components/blocks/FAQAccordion.astro';
+import CTASection from '../../components/sections/CTASection.astro';
+---
+
+<IndustryLayout
+  title="Services terrain - 3D, Nettoyage, Chauffage, Bâtiment"
+  description="Équipe marketing virtuelle pour l'acquisition locale : plus d'appels, plus de devis signés, plus de contrats récurrents. À partir de 4h/semaine."
+>
+  <Hero
+    title="De 0 à 1M€ en 3 ans : le système qui fait grandir les services terrain"
+    subtitle="Équipe marketing virtuelle pour l'acquisition locale"
+    description="3D, nettoyage, chauffage, bâtiment : plus d'appels, plus de devis signés, plus de contrats récurrents. À partir de 4h/semaine, sans embauche."
+    ctaText="Planifier une démo"
+    ctaLink="/contact?type=demo&industry=services-terrain"
+  />
+
+  <!-- Contexte avec cas réel -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Le défi des services terrain</h2>
+        <p class="text-gray-700 mb-4">
+          Depuis 2020, nous aidons des sociétés de 3D, nettoyage, chauffage et bâtiment à tenir le rythme sans recruter en interne. 
+          Quand il faut produire — pages locales, listings, contenus, analytics, campagnes — nous envoyons l'équipe et ça avance.
+        </p>
+        <p class="text-gray-700">
+          <strong>Exemple :</strong> EDN (3D, nettoyage, chauffage) est passé de 0 à 1M€ en 3 ans avec une équipe marketing virtuelle 
+          à partir de 4h/semaine. Plus d'appels, plus de devis signés, plus de contrats récurrents.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services concrets -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Ce qu'on met en place</h2>
+      
+      <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <!-- Visibilité Locale -->
+        <div class="bg-white p-6 rounded-lg border border-gray-200">
+          <h3 class="text-lg font-bold mb-3">📍 Visibilité Locale</h3>
+          <p class="text-sm text-gray-700 mb-4">Production continue, orientée demandes locales</p>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li>• SEO + Google Business Profile + Avis</li>
+            <li>• Pages locales ("désinsectisation + ville", "nettoyage syndic")</li>
+            <li>• Renforcement hebdomadaire de votre présence</li>
+          </ul>
+        </div>
+
+        <!-- Activation Publicitaire -->
+        <div class="bg-white p-6 rounded-lg border border-gray-200">
+          <h3 class="text-lg font-bold mb-3">📢 Activation Publicitaire</h3>
+          <p class="text-sm text-gray-700 mb-4">Campagnes prêtes à déclencher les appels</p>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li>• Google Ads + Meta Ads</li>
+            <li>• Campagnes "urgence nuisibles", "après-chantier"</li>
+            <li>• Gestion budgets, enchères, ciblages</li>
+          </ul>
+        </div>
+
+        <!-- Pilotage & Données -->
+        <div class="bg-white p-6 rounded-lg border border-gray-200">
+          <h3 class="text-lg font-bold mb-3">📊 Pilotage & Données</h3>
+          <p class="text-sm text-gray-700 mb-4">Tout est suivi, mesuré, optimisé</p>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li>• Tableaux de bord clairs</li>
+            <li>• Appels traqués, coûts par lead visibles</li>
+            <li>• KPI cœur : appels, devis, récurrence B2B</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Actions concrètes -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">La tête et les jambes : stratégie et exécution</h2>
+      <p class="text-gray-700 mb-6">
+        Des actions simples, faites régulièrement. Nous pensons la stratégie et nous l'exécutons — semaine après semaine.
+      </p>
+      
+      <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+        <h3 class="font-bold mb-3">Actions hebdomadaires typiques :</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li>• Publier chaque semaine sur Google Business Profile</li>
+          <li>• Lancer campagnes "urgence nuisibles" et "après-chantier"</li>
+          <li>• Créer pages "Désinsectisation [Ville]" et "Nettoyage syndic [Ville]"</li>
+          <li>• Récolter des avis après intervention</li>
+          <li>• Optimiser et relancer selon les KPI</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offres adaptées -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8">Offres pertinentes pour services terrain</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <a
+          href="/offres/lead-gen"
+          class="bg-white border-2 border-blue-200 rounded-lg p-6 hover:border-blue-400 transition-colors"
+        >
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Lead Gen</h3>
+          <p class="text-gray-700 mb-4">
+            <strong>Idéal pour :</strong> Acquisition locale (SEO + SEA), campagnes "urgence", pages locales, 
+            Google Business Profile, tracking des appels et devis.
+          </p>
+          <span class="text-blue-600 font-medium">En savoir plus →</span>
+        </a>
+        
+        <a
+          href="/offres/automation-ai-ops"
+          class="bg-white border-2 border-blue-200 rounded-lg p-6 hover:border-blue-400 transition-colors"
+        >
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Automation & AI Ops</h3>
+          <p class="text-gray-700 mb-4">
+            <strong>Idéal pour :</strong> Coordination équipes, routing des demandes, suivi qualité, 
+            intégrations CRM, boucles de retour qualité.
+          </p>
+          <span class="text-blue-600 font-medium">En savoir plus →</span>
+        </a>
+        
+        <a
+          href="/offres/growth-tempo"
+          class="bg-white border-2 border-blue-200 rounded-lg p-6 hover:border-blue-400 transition-colors"
+        >
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Growth Tempo</h3>
+          <p class="text-gray-700 mb-4">
+            <strong>Idéal pour :</strong> Organiser la croissance, définir priorités, mettre en place 
+            un rythme efficace, KPIs (appels, devis, récurrence).
+          </p>
+          <span class="text-blue-600 font-medium">En savoir plus →</span>
+        </a>
+        
+        <a
+          href="/offres/diagnostic"
+          class="bg-white border-2 border-blue-200 rounded-lg p-6 hover:border-blue-400 transition-colors"
+        >
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Diagnostic</h3>
+          <p class="text-gray-700 mb-4">
+            <strong>Idéal pour :</strong> Commencer par identifier vos priorités et choisir la bonne offre 
+            selon votre situation (3D, nettoyage, chauffage, bâtiment).
+          </p>
+          <span class="text-blue-600 font-medium">En savoir plus →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Processus adapté -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Commencez à exécuter la semaine prochaine</h2>
+      
+      <div class="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <div class="text-center">
+          <div class="text-3xl font-bold text-[#b9ff66] mb-2">1</div>
+          <h3 class="font-bold mb-2">Diagnostic</h3>
+          <p class="text-sm text-gray-700">
+            On analyse votre présence locale et vos leviers. On identifie les gisements d'appels, devis et récurrence.
+          </p>
+        </div>
+        
+        <div class="text-center">
+          <div class="text-3xl font-bold text-[#b9ff66] mb-2">2</div>
+          <h3 class="font-bold mb-2">Mise en place</h3>
+          <p class="text-sm text-gray-700">
+            On installe le système : campagnes, SEO local, tracking, avis, reporting. Prêt à générer des leads dès les premières semaines.
+          </p>
+        </div>
+        
+        <div class="text-center">
+          <div class="text-3xl font-bold text-[#b9ff66] mb-2">3</div>
+          <h3 class="font-bold mb-2">Exécution continue</h3>
+          <p class="text-sm text-gray-700">
+            Chaque semaine, on publie, optimise, relance. Vous recevez les appels et les devis, sans piloter l'équipe.
+          </p>
+        </div>
+        
+        <div class="text-center">
+          <div class="text-3xl font-bold text-[#b9ff66] mb-2">4</div>
+          <h3 class="font-bold mb-2">Optimisation</h3>
+          <p class="text-sm text-gray-700">
+            On suit vos KPI, on teste, on double ce qui marche. Plus d'appels, plus de contrats, croissance stable et prévisible.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Témoignage réel -->
+  <ProofStrip
+    testimonials={[
+      {
+        text: 'Je collabore avec Poppy Jikko depuis près de 2 ans sur de multiples projets. L\'équipe s\'est avérée être un élément déterminant pour le développement de notre entreprise. Nous la recommandons les yeux fermés !',
+        author: 'Guillaume Boulanger',
+        role: 'Founder & CEO, EDN (3D, Nettoyage, Chauffage)',
+      },
+      {
+        text: 'Lead Gen nous a permis de multiplier nos appels entrants par 3 en 6 mois. Le tracking complet nous a donné une visibilité totale sur ce qui fonctionne vraiment.',
+        author: 'Pest Control, Marseille',
+        role: 'Services terrain',
+      },
+    ]}
+    metrics={[
+      { value: '3x', label: 'Appels entrants' },
+      { value: '1M€', label: 'CA en 3 ans (EDN)' },
+      { value: '4h/sem', label: 'Minimum' },
+    ]}
+  />
+
+  <!-- FAQ adaptée -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <FAQAccordion
+        items={[
+          {
+            question: 'Combien d\'heures par semaine faut-il prévoir ?',
+            answer: 'À partir de 4h/semaine. La cadence s\'ajuste à la saisonnalité (pics d\'urgences nuisibles, remises en état, syndics). Vous augmentez ou réduisez le volume sans casse-tête RH.',
+          },
+          {
+            question: 'Quels sont les KPI que vous suivez ?',
+            answer: 'KPI cœur : appels entrants, demandes de devis, récurrence B2B. Tout est suivi, mesuré, et optimisé avec des tableaux de bord clairs et des coûts par lead visibles.',
+          },
+          {
+            question: 'Comment gérez-vous la saisonnalité (urgences nuisibles, etc.) ?',
+            answer: 'Nous ajustons la cadence selon vos pics saisonniers. Campagnes "urgence nuisibles", "après-chantier" sont lancées au bon moment. Flexibilité totale sans engagement long.',
+          },
+          {
+            question: 'Travaillez-vous avec Google Business Profile ?',
+            answer: 'Oui, nous publions chaque semaine sur GBP, récoltons des avis après intervention, et optimisons votre présence locale pour capturer les recherches à forte intention.',
+          },
+          {
+            question: 'Quelle est la différence avec une agence classique ?',
+            answer: 'Nous sommes une équipe marketing virtuelle : pas de babysitting, pas de bureaucratie. On produit, on exécute, on mesure. Vous recevez les appels et les devis, on s\'occupe du reste.',
+          },
+        ]}
+      />
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">Une formule flexible et modulaire</h2>
+      <p class="text-gray-700 mb-6 max-w-2xl mx-auto">
+        Réservez des heures pour attaquer ce qui bloque : pages locales, optimisation GBP, campagnes Google Ads, 
+        avis & annuaires, reporting lisible. Faites tourner vos process et libérez du temps pour les chantiers.
+      </p>
+      <p class="text-lg font-semibold text-gray-900 mb-6">À partir de 4h/semaine</p>
+      <a href="/contact?type=demo&industry=services-terrain" class="btn-primary">
+        Planifier une démo
+      </a>
+    </div>
+  </section>
+
+  <CTASection />
+</IndustryLayout>

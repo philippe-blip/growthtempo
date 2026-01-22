@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const casStudies = await getCollection('cas');
+  return casStudies.map((cas) => ({
+    params: { slug: cas.slug },
+    props: { cas },
+  }));
+}
+
+interface Props {
+  cas: Awaited<ReturnType<typeof getCollection>>[number];
+}
+
+const { cas } = Astro.props;
+const { Content } = await cas.render();
+---
+
+<BaseLayout
+  title={`${cas.data.title} - Résultats`}
+  description={`Cas study : ${cas.data.client} - ${cas.data.industry}`}
+>
+  <article class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+      <!-- Header -->
+      <div class="mb-8">
+        <span class="text-sm text-gray-500">{cas.data.industry}</span>
+        <h1 class="text-4xl font-bold text-gray-900 mt-2 mb-4">{cas.data.title}</h1>
+        <p class="text-xl text-gray-700">{cas.data.client}</p>
+      </div>
+
+      <!-- Metrics -->
+      {cas.data.metrics.length > 0 && (
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 bg-gray-50 rounded-lg p-6">
+          {cas.data.metrics.map((metric) => (
+            <div class="text-center">
+              <div class="text-3xl font-bold text-blue-600 mb-1">{metric.value}</div>
+              <div class="text-sm text-gray-600">{metric.label}</div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <!-- Content -->
+      <div class="prose prose-lg max-w-none">
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">Le défi</h2>
+          <p class="text-gray-700">{cas.data.challenge}</p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">La solution</h2>
+          <p class="text-gray-700">{cas.data.solution}</p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">Les résultats</h2>
+          <p class="text-gray-700">{cas.data.results}</p>
+        </section>
+
+        {cas.data.testimonial && (
+          <section class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg">
+            <p class="text-gray-700 italic mb-2">"{cas.data.testimonial}"</p>
+            <p class="text-sm text-gray-600">— {cas.data.client}</p>
+          </section>
+        )}
+
+        <Content />
+      </div>
+
+      <!-- Back link -->
+      <div class="mt-12">
+        <a
+          href="/resultats"
+          class="text-blue-600 hover:text-blue-700 font-medium"
+        >
+          ← Retour aux résultats
+        </a>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

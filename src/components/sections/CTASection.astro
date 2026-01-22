@@ -1,0 +1,55 @@
+---
+import Section from './Section.astro';
+import Card from '../ui/Card.astro';
+
+interface Props {
+  primaryCTA?: {
+    text: string;
+    link: string;
+  };
+  secondaryCTA?: {
+    text: string;
+    link: string;
+  };
+  title?: string;
+  description?: string;
+}
+
+const {
+  primaryCTA = { text: 'Demander un diagnostic', link: '/contact?type=diagnostic' },
+  secondaryCTA = { text: 'Prendre rendez-vous', link: '/contact?type=call' },
+  title = 'Prêt à accélérer votre croissance ?',
+  description = 'Contactez-nous dès aujourd\'hui pour en savoir plus sur la façon dont nos services de marketing digital peuvent aider votre entreprise à croître et à réussir en ligne.',
+} = Astro.props;
+---
+
+<Section>
+  <Card>
+    <div
+      class="flex bg-[#F3F3F3] rounded-[45px] p-[60px] relative mt-[123px] mb-[163px]"
+    >
+      <div class="w-full md:w-[40%] flex flex-col gap-[26px]">
+        <h2>{title}</h2>
+        <p>{description}</p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href={primaryCTA.link}
+            class="btn-primary"
+            data-track="cta_diagnostic"
+          >
+            {primaryCTA.text}
+          </a>
+          {secondaryCTA && (
+            <a
+              href={secondaryCTA.link}
+              class="btn-secondary"
+              data-track="cta_call"
+            >
+              {secondaryCTA.text}
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  </Card>
+</Section>

@@ -1,0 +1,66 @@
+---
+import Section from './Section.astro';
+
+interface Metric {
+  value: string;
+  label: string;
+}
+
+interface Testimonial {
+  text: string;
+  author: string;
+  role?: string;
+}
+
+interface Props {
+  logos?: string[];
+  metrics?: Metric[];
+  testimonials?: Testimonial[];
+}
+
+const { logos, metrics, testimonials } = Astro.props;
+---
+
+<Section>
+  <div class="mt-[140px] mb-5">
+    <!-- Logos -->
+    {logos && logos.length > 0 && (
+      <div class="mb-12">
+        <div class="flex flex-wrap items-center justify-center gap-8 opacity-60">
+          {logos.map((logo) => (
+            <div class="text-2xl font-bold">{logo}</div>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- Metrics -->
+    {metrics && metrics.length > 0 && (
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        {metrics.map((metric) => (
+          <div class="text-center">
+            <div class="text-4xl font-bold text-[#b9ff66] mb-2">
+              {metric.value}
+            </div>
+            <div class="text-black">{metric.label}</div>
+          </div>
+        ))}
+      </div>
+    )}
+
+    <!-- Testimonials -->
+    {testimonials && testimonials.length > 0 && (
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {testimonials.map((testimonial) => (
+          <div class="bg-[#F3F3F3] rounded-[45px] p-6 border border-[#191a23] shadow-[0px_5px_0px_#191a23]">
+            <p class="mb-4 italic text-black">"{testimonial.text}"</p>
+            <div class="text-sm text-black">
+              <div class="font-semibold">{testimonial.author}</div>
+              {testimonial.role && <div class="opacity-80">{testimonial.role}</div>}
+            </div>
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
+</Section>

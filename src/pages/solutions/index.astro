@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTASection from '../../components/sections/CTASection.astro';
+import { SOLUTIONS } from '../../utils/constants';
+---
+
+<BaseLayout
+  title="Solutions - Growth Tempo"
+  description="Solutions ciblées pour résoudre vos problèmes de croissance : founder bottleneck, qualité des leads, métriques fiables, et plus."
+>
+  <section class="py-20 bg-gradient-to-b from-blue-50 to-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        Solutions
+      </h1>
+      <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+        Des solutions ciblées pour résoudre vos problèmes de croissance
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {SOLUTIONS.map((solution) => (
+          <a
+            href={`/solutions/${solution.slug}`}
+            class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow"
+          >
+            <h3 class="text-xl font-bold text-gray-900 mb-2">{solution.title}</h3>
+            <p class="text-gray-700">{solution.description}</p>
+            <span class="inline-block mt-4 text-blue-600 font-medium">
+              En savoir plus →
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+</BaseLayout>

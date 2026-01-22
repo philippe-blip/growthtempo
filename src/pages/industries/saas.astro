@@ -1,0 +1,141 @@
+---
+import IndustryLayout from '../../layouts/IndustryLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import IndustryFit from '../../components/cards/IndustryFit.astro';
+import ProofStrip from '../../components/sections/ProofStrip.astro';
+import FAQAccordion from '../../components/blocks/FAQAccordion.astro';
+import CTASection from '../../components/sections/CTASection.astro';
+---
+
+<IndustryLayout
+  title="SaaS - Industries"
+  description="Solutions pour logiciels en tant que service : acquisition, rétention, métriques, automatisation."
+>
+  <Hero
+    title="SaaS"
+    description="Logiciels en tant que service : acquisition, rétention, métriques, automatisation."
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Contexte</h2>
+      <p class="text-gray-700 mb-4">
+        Les SaaS ont des défis spécifiques : acquisition de clients, rétention, métriques product-led growth,
+        automatisation des processus, et scaling sans bureaucratie.
+      </p>
+      <p class="text-gray-700">
+        Que vous soyez en B2B ou B2C, nos offres s'adaptent à votre modèle de croissance.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <IndustryFit
+        typicalSituations={[
+          'Vous voulez améliorer votre acquisition (SEO, SEA)',
+          'Vous avez besoin de métriques fiables (product-led growth)',
+          'Vous voulez automatiser vos processus internes',
+          'Vous cherchez à scaler sans bureaucratie',
+        ]}
+        antiFit={[
+          'Vous cherchez uniquement des leads non qualifiés en volume',
+          'Vous n\'êtes pas prêt à investir dans la qualité',
+          'Vous voulez des solutions sans adaptation à votre modèle',
+        ]}
+      />
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Offres pertinentes</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <a
+          href="/offres/lead-gen"
+          class="bg-blue-50 border border-blue-200 rounded-lg p-6 hover:bg-blue-100 transition-colors"
+        >
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Lead Gen</h3>
+          <p class="text-gray-700 mb-4">
+            Capturez l'intention avec SEO + SEA. Idéal pour l'acquisition SaaS.
+          </p>
+          <span class="text-blue-600 font-medium">En savoir plus →</span>
+        </a>
+        <a
+          href="/offres/growth-tempo"
+          class="bg-blue-50 border border-blue-200 rounded-lg p-6 hover:bg-blue-100 transition-colors"
+        >
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Growth Tempo</h3>
+          <p class="text-gray-700 mb-4">
+            Organisez votre croissance avec un operating rhythm efficace. Priorités, rythme, KPIs.
+          </p>
+          <span class="text-blue-600 font-medium">En savoir plus →</span>
+        </a>
+        <a
+          href="/offres/automation-ai-ops"
+          class="bg-blue-50 border border-blue-200 rounded-lg p-6 hover:bg-blue-100 transition-colors"
+        >
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Automation & AI Ops</h3>
+          <p class="text-gray-700 mb-4">
+            Automatisez vos processus : onboarding, support, data pipelines, dashboards.
+          </p>
+          <span class="text-blue-600 font-medium">En savoir plus →</span>
+        </a>
+        <a
+          href="/offres/diagnostic"
+          class="bg-blue-50 border border-blue-200 rounded-lg p-6 hover:bg-blue-100 transition-colors"
+        >
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Diagnostic</h3>
+          <p class="text-gray-700 mb-4">
+            Commencez par un diagnostic pour identifier vos priorités et choisir la bonne offre.
+          </p>
+          <span class="text-blue-600 font-medium">En savoir plus →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <ProofStrip
+    testimonials={[
+      {
+        text: 'Lead Gen nous a permis de multiplier notre acquisition par 3 en 6 mois.',
+        author: 'SaaS B2B, Paris',
+      },
+      {
+        text: 'Growth Tempo nous a aidés à scaler sans bureaucratie.',
+        author: 'SaaS B2C, Lyon',
+      },
+    ]}
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <FAQAccordion
+        items={[
+          {
+            question: 'Comment adaptez-vous Lead Gen au SaaS ?',
+            answer: 'Nous nous concentrons sur la capture d\'intention (recherche) avec SEO + SEA, et sur la qualité des leads avec un tracking complet et une boucle de retour qualité.',
+          },
+          {
+            question: 'Quelles métriques suivez-vous pour les SaaS ?',
+            answer: 'Métriques product-led growth : acquisition, activation, rétention, revenue. Nous mettons en place des scorecards avec KPI utiles, pas vanity metrics.',
+          },
+          {
+            question: 'Comment automatisez-vous les processus SaaS ?',
+            answer: 'Avec n8n workflows : onboarding, support, enrichissement de données, intégrations avec vos outils (Stripe, Intercom, etc.), data pipelines.',
+          },
+          {
+            question: 'Combien de temps pour voir des résultats ?',
+            answer: 'Cela dépend de l\'offre : Lead Gen (3-6 mois pour SEO, quelques semaines pour SEA), Growth Tempo (4-6 semaines), Automation (2-4 semaines).',
+          },
+          {
+            question: 'Quelle offre me convient le mieux ?',
+            answer: 'Commencez par un Diagnostic pour identifier vos priorités. Ensuite, selon vos besoins : Lead Gen pour l\'acquisition, Growth Tempo pour l\'organisation, Automation & AI Ops pour les processus.',
+          },
+        ]}
+      />
+    </div>
+  </section>
+
+  <CTASection />
+</IndustryLayout>
