@@ -1,0 +1,79 @@
+---
+import { TESTIMONIALS } from "../../utils/constants";
+
+const slides = TESTIMONIALS.map((testimonial, index) => ({
+  index: index + 1,
+  name: testimonial.author,
+  description: testimonial.role,
+  text: testimonial.text,
+}));
+---
+
+<div class="testimonials-grid mt-10 mt-[84px] mb-[124px]">
+  {
+    slides.map((slide) => (
+      <div
+        class="testimonial-slide text-white flex flex-col"
+        role="group"
+        aria-label={`${slide.index} / ${slides.length}`}
+      >
+        <div class="flex flex-col justify-center items-center py-[48px] px-6 sm:px-[52px]">
+          <p class="bubble">
+            "{slide.text}"
+          </p>
+        </div>
+        <div class="w-full px-10 sm:px-20 ">
+          <div class="text-[#b9ff66] font-medium">{slide.name}</div>
+          <div>{slide.description}</div>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  @media (min-width: 1024px) {
+    .testimonials-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+    }
+  }
+  .bubble {
+    position: relative;
+    padding: 8%;
+    background-color: var(--dark);
+    color: var(--white);
+    border-radius: 45px;
+    border: 1px solid var(--green);
+  }
+  .bubble:after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50px;
+    border-width: 22px;
+    border-style: solid;
+    border-color: var(--dark) transparent transparent var(--dark);
+  }
+  .bubble:before {
+    content: "";
+    position: absolute;
+    bottom: -40px;
+    left: 48px;
+    border-width: 20px;
+    border-style: solid;
+    border-color: var(--green) transparent transparent var(--green);
+  }
+  .testimonial-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+</style>

@@ -1,0 +1,29 @@
+---
+import SectionTitle from "../ui/SectionTitle.astro";
+import OfferCard from "../ui/OfferCard.astro";
+import Section from "./Section.astro";
+import { OFFERS } from "../../utils/constants";
+
+const description =
+  "4 lignes de produit nettes pour accélérer votre croissance. Des solutions ciblées. Des résultats mesurables.";
+---
+
+<Section id="offres">
+  <div class="mt-[140px] mb-5">
+    <SectionTitle sectionTitle="Nos offres" description={description} />
+    <div class="grid lg:grid-cols-2 lg:grid-rows-2 gap-10">
+      {
+        OFFERS.map((offer) => (
+          <OfferCard
+            index={offer.index}
+            title={offer.title}
+            promise={offer.promise}
+            forWho={offer.forWho}
+            ctaText={offer.ctaText}
+            ctaLink={offer.ctaLink}
+          />
+        ))
+      }
+    </div>
+  </div>
+</Section>

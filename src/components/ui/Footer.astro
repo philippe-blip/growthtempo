@@ -1,0 +1,84 @@
+---
+import { Image } from "astro:assets";
+import Facebook from "../../assets/facebook.svg";
+import Linkedin from "../../assets/linkedin.svg";
+import Twitter from "../../assets/twitter.svg";
+import ShortForm from "./ShortForm.astro";
+import { NAV_ITEMS } from "../../utils/constants";
+
+const logos = [
+  { name: "Facebook", src: Facebook, link: "https://facebook.com" },
+  { name: "Linkedin", src: Linkedin, link: "https://linkedin.com" },
+  { name: "Twitter", src: Twitter, link: "https://twitter.com" },
+];
+
+const links = NAV_ITEMS;
+---
+
+<section class="sm:px-5">
+  <div class="w-full max-w-[1240px] mx-auto">
+    <div
+      class="px-[15px] bg-[#191a23] text-white py-[55px] lg:px-[60px] sm:rounded-t-[45px]"
+    >
+      <div>
+        <div
+          class="flex flex-col lg:flex-row gap-7 items-center justify-between"
+        >
+          <div>
+            <a href="/">
+              <span class="text-2xl font-bold text-white">Growth Tempo</span>
+            </a>
+          </div>
+          <ul class="flex flex-col sm:flex-row gap-5">
+            {
+              links.map((link) => {
+                return (
+                  <li class="text-center">
+                    <a class="underline hover:text-[#b9ff66] transition-colors" href={link.href}>
+                      {link.label}
+                    </a>
+                  </li>
+                );
+              })
+            }
+          </ul>
+          <ul class="flex gap-5">
+            {
+              logos.map((logo) => {
+                return (
+                  <li>
+                    <a href={logo.link} target="_blank" rel="noopener noreferrer">
+                      <Image src={logo.src} alt={logo.name} />
+                    </a>
+                  </li>
+                );
+              })
+            }
+          </ul>
+        </div>
+
+        <div class="flex flex-col lg:flex-row mt-[66px] mb-[51px]">
+          <div
+            class="flex text-center lg:text-start flex-col w-full lg:w-[30%]"
+          >
+            <h3 class="mb-5">Contactez-nous :</h3>
+            <div class="flex flex-col justify-between gap-4">
+              <span> Email: contact@growthtempo.com </span>
+              <span> Téléphone: +33 X XX XX XX XX </span>
+            </div>
+          </div>
+          <div class="flex-grow my-10 lg:my-0 lg:ml-12">
+            <ShortForm />
+          </div>
+        </div>
+      </div>
+
+      <div class="h-[1px] bg-white mb-5"></div>
+      <div
+        class="flex flex-col lg:flex-row h-20 justify-center mt-4 text-center md:justify-between md:mt-0"
+      >
+        <span>&copy; {new Date().getFullYear()} Growth Tempo - Tous droits réservés</span>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,6 +1,22 @@
 @import "tailwindcss";
 
 @layer base {
+  @font-face {
+    font-family: "Grotesk";
+    src: url("/fonts/grotesk/SpaceGrotesk-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Grotesk";
+    src: url("/fonts/grotesk/SpaceGrotesk-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
   /* Variables CSS du thème Kreativ Software */
   :root {
     --green: #b9ff66;
@@ -11,6 +27,7 @@
 
   * {
     box-sizing: border-box;
+    font-family: "Grotesk", sans-serif;
     scroll-behavior: smooth;
   }
 

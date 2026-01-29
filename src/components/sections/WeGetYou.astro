@@ -1,0 +1,43 @@
+---
+import Section from "./Section.astro";
+import SectionTitle from "../ui/SectionTitle.astro";
+
+const values = [
+  {
+    icon: "🎯",
+    title: "Vision Aligned",
+    description: "Les agences et freelancers peuvent se désaligner. Nous restaurons une vision forte qui aligne tout le monde.",
+  },
+  {
+    icon: "📊",
+    title: "Data Driven",
+    description: "Les tendances et FOMO ne sont pas une façon de diriger. Nous vous aidons à rester data driven avec des dashboards intelligents.",
+  },
+  {
+    icon: "⚡",
+    title: "Agile Paced",
+    description: "La plupart des orgs marketing sont trop lentes. Tempo™ apporte le meilleur de l'Agile à votre équipe.",
+  },
+];
+---
+
+<Section id="wegetyou">
+  <div class="mt-[140px] mb-5">
+    <SectionTitle
+      sectionTitle="We Get You"
+      description="Des fondateurs bootstrappés aux dirigeants, nous avons affiné Growth Tempo™ pour avoir un impact réel"
+    />
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {
+        values.map((value) => (
+          <div class="text-center">
+            <div class="text-4xl mb-4">{value.icon}</div>
+            <h3 class="text-xl font-bold mb-3 text-black">{value.title}</h3>
+            <p class="text-black">{value.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</Section>

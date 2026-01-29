@@ -1,5 +1,5 @@
 ---
-import { NAV_ITEMS } from '../../utils/constants';
+import { NAV_ITEMS } from "../../utils/constants";
 ---
 
 <div
@@ -23,15 +23,14 @@ import { NAV_ITEMS } from '../../utils/constants';
       id="navmenu"
       class="bg-[#fff] w-full absolute top-full left-0 z-10 lg:static lg:flex lg:flex-grow lg:items-center lg:justify-center overflow-hidden transition-all duration-500 h-0 lg:h-auto shadow-lg lg:shadow-none"
     >
-      <!-- Nav Links -->
       <ul class="list-none lg:flex lg:flex-grow lg:justify-center lg:gap-10 py-4 lg:py-0">
         {
           NAV_ITEMS.map((item) => {
             return (
               <li class="lg:mx-0">
-                <a 
-                  href={item.href} 
-                  class="block px-6 py-3 lg:px-0 lg:py-0 text-black hover:text-[#b9ff66] hover:bg-[#f3f3f3] lg:hover:bg-transparent transition-all duration-200 font-medium no-underline"
+                <a
+                  href={item.href}
+                  class="block px-6 py-3 lg:px-0 lg:py-0 text-black hover:text-[#b9ff66] transition-colors font-medium no-underline"
                 >
                   {item.label}
                 </a>
@@ -41,7 +40,6 @@ import { NAV_ITEMS } from '../../utils/constants';
         }
       </ul>
 
-      <!-- CTA Button -->
       <div class="flex lg:flex-row lg:items-center px-6 pb-4 lg:px-0 lg:pb-0 lg:gap-4 flex-col border-t border-[#f3f3f3] lg:border-0 pt-4 lg:pt-0 mt-2 lg:mt-0">
         <a href="/contact" class="btn-secondary w-full lg:w-auto text-center no-underline">Contact</a>
       </div>
@@ -64,7 +62,6 @@ import { NAV_ITEMS } from '../../utils/constants';
         viewBox="0 0 24 24"
       >
         <path
-          id="menuIconPath1"
           stroke-linecap="round"
           stroke-linejoin="round"
           stroke-width="2"
@@ -75,7 +72,6 @@ import { NAV_ITEMS } from '../../utils/constants';
     </button>
   </nav>
 </div>
-
 <script>
   document.addEventListener("DOMContentLoaded", (_) => {
     const menuButton = document.getElementById("menuButton");
@@ -86,54 +82,40 @@ import { NAV_ITEMS } from '../../utils/constants';
 
     if (menuButton && navMenu && menuIcon) {
       menuButton.addEventListener("click", () => {
-        /* Handle the height transition */
         isMenuOpen = !isMenuOpen;
-
         menuButton.setAttribute("aria-expanded", `${isMenuOpen}`);
 
         if (isMenuOpen) {
           navMenu.style.height = `${navMenu.scrollHeight}px`;
-          // Transform hamburger to X
           menuIcon.innerHTML = `
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" class="transition-all duration-300" />
           `;
         } else {
           navMenu.style.height = "0px";
-          // Transform X back to hamburger
           menuIcon.innerHTML = `
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" class="transition-all duration-300" />
           `;
         }
       });
 
-      // Close menu when clicking on a link
-      const menuLinks = navMenu.querySelectorAll('a');
-      menuLinks.forEach(link => {
+      const menuLinks = navMenu.querySelectorAll("a");
+      menuLinks.forEach((link) => {
         link.addEventListener("click", () => {
           if (isMenuOpen) {
             isMenuOpen = false;
             navMenu.style.height = "0px";
             menuButton.setAttribute("aria-expanded", "false");
-            menuIcon.innerHTML = `
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" class="transition-all duration-300" />
-            `;
           }
         });
       });
 
       window.addEventListener("resize", () => {
-        /* Resize cleanup screen state*/
         if (window.innerWidth >= 1024) {
-          /* Add height if menu was closed and then resize happened */
           navMenu.style.height = "auto";
           navMenu.classList.remove("h-0");
           isMenuOpen = false;
           menuButton.setAttribute("aria-expanded", "false");
-          menuIcon.innerHTML = `
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" class="transition-all duration-300" />
-          `;
         } else {
-          /* Prevent opened menu when going from big to small */
           navMenu.style.height = "0px";
         }
       });

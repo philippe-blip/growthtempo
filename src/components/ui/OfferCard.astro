@@ -1,0 +1,47 @@
+---
+import { Image } from "astro:assets";
+import Card from "./Card.astro";
+import gob from "../../assets/icon6.svg";
+import wob from "../../assets/icon7.svg";
+
+const { index = 1, title, promise, forWho, ctaText, ctaLink } = Astro.props;
+const bgClass = index === 1 ? 'bg-white' : index === 2 ? 'bg-[#b9ff66]' : 'bg-[#191a23] text-white';
+const titleClass = index === 1 ? 'greenhead' : 'whitehead';
+const textClass = index === 3 ? 'text-white' : 'text-black';
+const textMutedClass = index === 3 ? 'text-white opacity-85' : 'text-black opacity-80';
+const ctaClass = index === 3 ? 'text-[#b9ff66]' : 'text-black';
+---
+
+<Card isUnderline={true}>
+  <div
+    class={`min-h-[300px] w-full grid custom-grid lg:grid-cols-2 lg:grid-rows-1 p-8 sm:p-[50px] rounded-[45px] ${bgClass}`}
+  >
+    <div class="flex flex-col col-span-2 lg:col-span-1 justify-between">
+      <h3 class="flex flex-col mb-4">
+        <span class={`w-[fit-content] ${index === 1 ? 'greenhead' : index === 2 ? 'whitehead' : 'blackhead'}`}>
+          {title}
+        </span>
+      </h3>
+      <div class="flex-grow flex flex-col justify-between">
+        <div>
+          <p class={`mb-3 font-medium ${textClass}`}>{promise}</p>
+          <p class={`text-sm ${textMutedClass}`}>
+            <span class="font-semibold">Pour qui :</span> {forWho}
+          </p>
+        </div>
+        <div class="mt-6">
+          <a href={ctaLink} class={`flex items-center gap-3.5 font-medium ${ctaClass} hover:opacity-80 transition-opacity`}>
+            <Image src={index === 1 || index === 2 ? gob : wob} alt={title} />
+            <span class="hidden sm:block">{ctaText}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Card>
+
+<style>
+  .custom-grid {
+    grid-template: auto auto;
+  }
+</style>

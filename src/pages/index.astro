@@ -1,142 +1,26 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '../components/sections/Hero.astro';
-import OfferCard from '../components/cards/OfferCard.astro';
-import HowWeWork from '../components/sections/HowWeWork.astro';
-import ProofStrip from '../components/sections/ProofStrip.astro';
-import CTASection from '../components/sections/CTASection.astro';
-import Section from '../components/sections/Section.astro';
-import SectionTitle from '../components/ui/SectionTitle.astro';
-import { OFFERS } from '../utils/constants';
+import Contact from "../components/sections/Contact.astro";
+import Hero from "../components/sections/Hero.astro";
+import Problems from "../components/sections/Problems.astro";
+import Process from "../components/sections/Process.astro";
+import Proposal from "../components/sections/Proposal.astro";
+import Services from "../components/sections/Services.astro";
+import Testimonials from "../components/sections/Testimonials.astro";
+import WeGetYou from "../components/sections/WeGetYou.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import "../styles/global.css";
 ---
 
-<BaseLayout
+<MainLayout
   title="Growth Tempo - Growth Marketing on Demand"
   description="Votre CMO et équipe marketing à la demande. Résolvez la stagnation, le gaspillage et le chaos avec 4 offres nettes."
 >
-  <Hero
-    title="Growth Marketing on Demand"
-    subtitle="Votre CMO et équipe marketing à la demande"
-    description="Résolvez la stagnation, le gaspillage et le chaos avec 4 offres nettes. Pas de blabla. Des résultats mesurables."
-    ctaText="Atelier Vision Offert"
-    ctaLink="/contact?type=workshop"
-  />
-
-  <!-- Section Problèmes -->
-  <Section>
-    <div class="mt-[140px] mb-5">
-      <SectionTitle
-        sectionTitle="Le messy middle"
-        description="Trop gros pour se passer de structure, trop petit pour tout déléguer. De 0,9M à 10M€, les plateaux s'enchaînent. Growth Tempo vous aide à briser le plafond de verre."
-      />
-      
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white p-6 rounded-[45px] border border-[#191a23] shadow-[0px_5px_0px_#191a23]">
-          <h3 class="text-lg font-bold mb-2 text-black">❌ Stagnation</h3>
-          <p class="text-sm text-black">Vos canaux plafonnent. Les projets s'essoufflent.</p>
-        </div>
-        <div class="bg-white p-6 rounded-[45px] border border-[#191a23] shadow-[0px_5px_0px_#191a23]">
-          <h3 class="text-lg font-bold mb-2 text-black">❌ Gaspillage</h3>
-          <p class="text-sm text-black">Vous dépensez sans savoir ce qui fonctionne.</p>
-        </div>
-        <div class="bg-white p-6 rounded-[45px] border border-[#191a23] shadow-[0px_5px_0px_#191a23]">
-          <h3 class="text-lg font-bold mb-2 text-black">❌ Chaos</h3>
-          <p class="text-sm text-black">Trop de projets, rien n'avance vraiment.</p>
-        </div>
-      </div>
-    </div>
-  </Section>
-
-  <!-- Section We Get You -->
-  <Section>
-    <div class="mt-[140px] mb-5">
-      <SectionTitle
-        sectionTitle="We Get You"
-        description="Des fondateurs bootstrappés aux dirigeants, nous avons affiné Growth Tempo™ pour avoir un impact réel"
-      />
-      
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="text-center">
-          <div class="text-4xl mb-4">🎯</div>
-          <h3 class="text-xl font-bold mb-3 text-black">Vision Aligned</h3>
-          <p class="text-black">
-            Les agences et freelancers peuvent se désaligner. Nous restaurons une vision forte qui aligne tout le monde.
-          </p>
-        </div>
-        <div class="text-center">
-          <div class="text-4xl mb-4">📊</div>
-          <h3 class="text-xl font-bold mb-3 text-black">Data Driven</h3>
-          <p class="text-black">
-            Les tendances et FOMO ne sont pas une façon de diriger. Nous vous aidons à rester data driven avec des dashboards intelligents.
-          </p>
-        </div>
-        <div class="text-center">
-          <div class="text-4xl mb-4">⚡</div>
-          <h3 class="text-xl font-bold mb-3 text-black">Agile Paced</h3>
-          <p class="text-black">
-            La plupart des orgs marketing sont trop lentes. Tempo™ apporte le meilleur de l'Agile à votre équipe.
-          </p>
-        </div>
-      </div>
-    </div>
-  </Section>
-
-  <!-- 4 Offres -->
-  <Section>
-    <div class="mt-[140px] mb-5">
-      <SectionTitle
-        sectionTitle="Nos offres"
-        description="4 lignes de produit nettes pour accélérer votre croissance. Des solutions ciblées. Des résultats mesurables."
-      />
-      <div class="grid lg:grid-cols-2 lg:grid-rows-2 gap-10">
-        {OFFERS.map((offer, index) => (
-          <OfferCard
-            title={offer.title}
-            promise={offer.promise}
-            forWho={offer.forWho}
-            ctaText={offer.ctaText}
-            ctaLink={offer.ctaLink}
-            index={(index % 3) + 1}
-          />
-        ))}
-      </div>
-    </div>
-  </Section>
-
-  <!-- How We Work -->
-  <HowWeWork />
-
-  <!-- Proof -->
-  <ProofStrip
-    metrics={[
-      { value: '50+', label: 'Clients accompagnés' },
-      { value: '3x', label: 'Croissance moyenne' },
-      { value: '90%', label: 'Taux de satisfaction' },
-    ]}
-    testimonials={[
-      {
-        text: 'Philippe m\'a apporté une vision synthétique et claire des bases du marketing avec le coaching Tempo. Je le recommande pour son côté bien structuré.',
-        author: 'Rym Michaut',
-        role: 'Responsable Marketing, Datasulting',
-      },
-      {
-        text: 'Depuis 3 ans, l\'équipe Poppy Jikko nous accompagne. Coaching Tempo, Audits, Assistant SEO… Efficace, direct, orienté client et des résultats flagrants.',
-        author: 'Lisa Salleron',
-        role: 'Director, Windward Yachts',
-      },
-      {
-        text: 'Je collabore avec Poppy Jikko depuis près de 2 ans. L\'équipe s\'est avérée être un élément déterminant pour le développement de notre entreprise.',
-        author: 'Guillaume Boulanger',
-        role: 'Founder & CEO, EDN',
-      },
-    ]}
-  />
-
-  <!-- CTA -->
-  <CTASection
-    primaryCTA={{ text: 'Atelier Vision Offert', link: '/contact?type=workshop' }}
-    secondaryCTA={{ text: 'Auto-évaluation Gratuite', link: '/contact?type=assessment' }}
-    title="Prêt à briser le plafond de verre ?"
-    description="Découvrez comment Growth Tempo peut vous aider à résoudre la stagnation, le gaspillage et le chaos."
-  />
-</BaseLayout>
+  <Hero />
+  <Problems />
+  <WeGetYou />
+  <Services />
+  <Proposal />
+  <Process />
+  <Testimonials />
+  <Contact />
+</MainLayout>

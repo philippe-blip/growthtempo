@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import MainLayout from '../../layouts/MainLayout.astro';
 import CaseStudyTeaser from '../../components/cards/CaseStudyTeaser.astro';
 import CTASection from '../../components/sections/CTASection.astro';
 import { getCollection } from 'astro:content';
@@ -7,7 +7,7 @@ import { getCollection } from 'astro:content';
 const casStudies = await getCollection('cas');
 ---
 
-<BaseLayout
+<MainLayout
   title="Résultats - Growth Tempo"
   description="Découvrez les résultats de nos clients : cas studies, métriques, témoignages."
 >
@@ -36,7 +36,7 @@ const casStudies = await getCollection('cas');
               client={cas.data.client}
               metrics={cas.data.metrics}
               summary={cas.data.challenge}
-              link={`/resultats/cas/${cas.slug}`}
+              link={`/resultats/cas/${cas.id}`}
             />
           ))}
         </div>
@@ -45,4 +45,4 @@ const casStudies = await getCollection('cas');
   </section>
 
   <CTASection />
-</BaseLayout>
+</MainLayout>

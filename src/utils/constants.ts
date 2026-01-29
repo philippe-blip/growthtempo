@@ -3,8 +3,25 @@ export const NAV_ITEMS = [
   { label: 'Solutions', href: '/solutions' },
   { label: 'Industries', href: '/industries' },
   { label: 'Résultats', href: '/resultats' },
-  { label: 'Ressources', href: '/ressources' },
   { label: 'À propos', href: '/a-propos' },
+] as const;
+
+export const TESTIMONIALS = [
+  {
+    text: "Philippe m'a apporté une vision synthétique et claire des bases du marketing avec le coaching Tempo. Je le recommande pour son côté bien structuré.",
+    author: 'Rym Michaut',
+    role: 'Responsable Marketing, Datasulting',
+  },
+  {
+    text: "Depuis 3 ans, l'équipe Poppy Jikko nous accompagne. Coaching Tempo, Audits, Assistant SEO… Efficace, direct, orienté client et des résultats flagrants.",
+    author: 'Lisa Salleron',
+    role: 'Director, Windward Yachts',
+  },
+  {
+    text: "Je collabore avec Poppy Jikko depuis près de 2 ans. L'équipe s'est avérée être un élément déterminant pour le développement de notre entreprise.",
+    author: 'Guillaume Boulanger',
+    role: 'Founder & CEO, EDN',
+  },
 ] as const;
 
 export const OFFERS = [
@@ -15,6 +32,7 @@ export const OFFERS = [
     forWho: 'Pour les fondateurs qui veulent clarifier leurs priorités',
     ctaText: 'Découvrir',
     ctaLink: '/offres/diagnostic',
+    index: 1,
   },
   {
     slug: 'growth-tempo',
@@ -23,6 +41,7 @@ export const OFFERS = [
     forWho: 'Pour les équipes qui veulent un rythme et des priorités claires',
     ctaText: 'Découvrir',
     ctaLink: '/offres/growth-tempo',
+    index: 2,
   },
   {
     slug: 'lead-gen',
@@ -31,6 +50,7 @@ export const OFFERS = [
     forWho: 'Pour les entreprises qui veulent capter l\'intention existante',
     ctaText: 'Découvrir',
     ctaLink: '/offres/lead-gen',
+    index: 3,
   },
   {
     slug: 'automation-ai-ops',
@@ -39,6 +59,7 @@ export const OFFERS = [
     forWho: 'Pour les équipes qui veulent automatiser les flux réels',
     ctaText: 'Découvrir',
     ctaLink: '/offres/automation-ai-ops',
+    index: 4,
   },
 ] as const;
 

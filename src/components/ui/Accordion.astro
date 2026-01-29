@@ -1,0 +1,36 @@
+---
+import AccordionItem from "./AccordionItem.astro";
+
+const content = [
+  {
+    index: 1,
+    title: "Diagnose",
+    description:
+      "Analyse de votre situation actuelle et identification des priorités. Nous examinons vos canaux, vos métriques et votre organisation pour identifier les goulots d'étranglement et les opportunités de croissance.",
+  },
+  {
+    index: 2,
+    title: "Build",
+    description:
+      "Mise en place des systèmes, processus et outils nécessaires. Nous construisons avec vous les fondations : tracking, dashboards, processus de décision et organisation de l'équipe.",
+  },
+  {
+    index: 3,
+    title: "Run",
+    description:
+      "Exécution continue avec suivi, ajustements et améliorations. Nous maintenons le rythme avec des sprints réguliers, des revues de performance et des ajustements basés sur les données.",
+  },
+];
+---
+
+{
+  content.map((item) => {
+    return (
+      <AccordionItem
+        index={item.index}
+        title={item.title}
+        description={item.description}
+      />
+    );
+  })
+}

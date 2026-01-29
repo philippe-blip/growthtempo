@@ -1,0 +1,42 @@
+---
+import Section from "./Section.astro";
+import SectionTitle from "../ui/SectionTitle.astro";
+import Card from "../ui/Card.astro";
+
+const problems = [
+  {
+    title: "❌ Stagnation",
+    description: "Vos canaux plafonnent. Les projets s'essoufflent.",
+  },
+  {
+    title: "❌ Gaspillage",
+    description: "Vous dépensez sans savoir ce qui fonctionne.",
+  },
+  {
+    title: "❌ Chaos",
+    description: "Trop de projets, rien n'avance vraiment.",
+  },
+];
+---
+
+<Section id="problems">
+  <div class="mt-[140px] mb-5">
+    <SectionTitle
+      sectionTitle="Le messy middle"
+      description="Trop gros pour se passer de structure, trop petit pour tout déléguer. De 0,9M à 10M€, les plateaux s'enchaînent. Growth Tempo vous aide à briser le plafond de verre."
+    />
+
+    <div class="grid md:grid-cols-3 gap-6">
+      {
+        problems.map((problem) => (
+          <Card isUnderline={true}>
+            <div class="bg-white p-6 rounded-[45px]">
+              <h3 class="text-lg font-bold mb-2 text-black">{problem.title}</h3>
+              <p class="text-sm text-black">{problem.description}</p>
+            </div>
+          </Card>
+        ))
+      }
+    </div>
+  </div>
+</Section>
